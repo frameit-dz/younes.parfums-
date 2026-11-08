@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YOUNES PARFUM | متجر العطور والروائح الفاخرة</title>
+  <meta name="description" content="متجر يونس للعطور الفاخرة - أرقى العطور العالمية والشرقية، عود وعنبر، ثبات يدوم طويلاً، مع التوصيل لكافة الـ 58 ولاية والدفع عند الاستلام.">
+  
+  <!-- Favicon / Logo -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Main Luxury Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. STOREFRONT VIEW
+       ========================================================================== -->
+  <div id="storeMainView">
+    
+    <!-- Announcement Bar -->
+    <aside class="announcement-bar">
+      <span class="badge">عرض حصري</span>
+      <span>✨ توصيل سريع لـ 58 ولاية جزائرية • الدفع عند الاستلام • عطور أصلية ومضمونة 100% ✨</span>
+      <span style="display: inline-flex; align-items: center; gap: 6px; margin-right: 15px;">
+        <i class="fas fa-phone-alt" style="font-size: 0.75rem;"></i>
+        <span style="direction: ltr;">0550 00 00 00</span>
+      </span>
+    </aside>
+
+    <!-- Main Navigation Header -->
+    <header class="main-header">
+      <div class="header-container">
+        <!-- Brand Logo & Title -->
+        <div class="brand-wrapper" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          <img src="assets/logo.png" alt="YOUNES PARFUM" class="brand-logo-img">
+          <div class="brand-text">
+            <h1 class="latin-brand gold-text">YOUNES PARFUM</h1>
+            <span>عطور وروائح النخبة الفاخرة</span>
+          </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" id="storeSearchInput" class="search-input" placeholder="ابحث عن عطرك المفضل، نوتات العود، الفانيليا...">
+        </div>
+
+        <!-- Header Actions: Cart & Contact -->
+        <div class="header-actions">
+          <button class="header-btn" onclick="openCartDrawer()" title="سلة المشتريات">
+            <i class="fas fa-shopping-bag" style="color: var(--gold-primary);"></i>
+            <span>السلة</span>
+            <span id="cartBadgeCount" class="count-badge" style="display: none;">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section class="hero-section">
+      <div class="hero-banner">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <i class="fas fa-crown"></i>
+            <span>تشكيلة حصرية لعام 2026</span>
+          </div>
+          <h2 class="hero-title">
+            فخامة تدوم طويلاً.. <br>
+            <span class="gold-text">عطور تأسر الحواس</span>
+          </h2>
+          <p class="hero-subtitle">
+            ننتقي لك أرقى الخامات العطرية من أعرق دور العطور العالمية والشرقية. نوتات نقية، تركيز فائق، وتوصيل آمن وسريع إلى باب منزلك في جميع الولايات.
+          </p>
+          <div class="hero-features">
+            <div class="hero-feat-item"><i class="fas fa-certificate"></i> أصلي ومضمون 100%</div>
+            <div class="hero-feat-item"><i class="fas fa-truck-fast"></i> توصيل 58 ولاية</div>
+            <div class="hero-feat-item"><i class="fas fa-hand-holding-dollar"></i> الدفع عند الاستلام</div>
+            <div class="hero-feat-item"><i class="fas fa-clock"></i> ثبات وفوحان +24 ساعة</div>
+          </div>
+          <button class="cta-gold-btn" onclick="document.getElementById('catalogSection').scrollIntoView({behavior: 'smooth'})">
+            <span>تصفح العطور واطلب الآن</span>
+            <i class="fas fa-arrow-left"></i>
+          </button>
+        </div>
+
+        <div class="hero-badge-circle">
+          <span class="num">58</span>
+          <span class="label">ولاية مغطاة للتوصيل</span>
+          <span style="font-size: 0.75rem; color: var(--gold-primary); margin-top: 6px;">الدفع عند الاستلام</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Perfumes Catalog Section -->
+    <main class="store-container" id="catalogSection">
+      
+      <!-- Section Header -->
+      <div class="section-header-box">
+        <div>
+          <h2 class="section-title">مجموعتنا العطرية المختارة</h2>
+          <p class="section-subtitle">اكتشف التناغم المثالي بين الفخامة الفرنسية والأصالة الشرقية</p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">
+            <i class="fas fa-th-large"></i> كل العطور
+          </button>
+          <button class="filter-btn" data-filter="men">
+            <i class="fas fa-mars"></i> عطور رجالية
+          </button>
+          <button class="filter-btn" data-filter="women">
+            <i class="fas fa-venus"></i> عطور نسائية
+          </button>
+          <button class="filter-btn" data-filter="oriental">
+            <i class="fas fa-gem"></i> عطور النيش والعود
+          </button>
+          <button class="filter-btn" data-filter="sets">
+            <i class="fas fa-gift"></i> مجموعات وهدايا
+          </button>
+        </div>
+      </div>
+
+      <!-- Catalog Toolbar (Count & Sort) -->
+      <div class="catalog-toolbar">
+        <div id="productsCountLabel">جاري تحميل العطور الفاخرة...</div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span>ترتيب حسب:</span>
+          <select id="catalogSortSelect" class="sort-select">
+            <option value="featured">المميزة والأحدث</option>
+            <option value="price-low">السعر: من الأقل للأعلى</option>
+            <option value="price-high">السعر: من الأعلى للأقل</option>
+            <option value="rating">الأعلى تقييماً</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Dynamic Perfumes Grid -->
+      <div id="perfumesGrid" class="perfumes-grid">
+        <!-- Rendered reactively via js/app.js -->
+      </div>
+    </main>
+
+    <!-- Trust & Quality Features Banner -->
+    <section class="trust-banner">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fas fa-shield-alt"></i></div>
+          <div class="trust-text">
+            <h4>ضمان الأصالة 100%</h4>
+            <p>جميع عطورنا أصلية ومستخلصة بأعلى معايير الجودة والتركيز.</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fas fa-shipping-fast"></i></div>
+          <div class="trust-text">
+            <h4>توصيل سريع لباب منزلك</h4>
+            <p>شبكة شحن موثوقة تغطي كامل الـ 58 ولاية جزائرية خلال 24-48 ساعة.</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fas fa-box-open"></i></div>
+          <div class="trust-text">
+            <h4>معاينة الطرد قبل الدفع</h4>
+            <p>افتح طردك وتأكد من العطر بحرية تامة ثم ادفع بأمان لموزع التوصيل.</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fas fa-headset"></i></div>
+          <div class="trust-text">
+            <h4>خدمة زبائن واستشارات</h4>
+            <p>فريقنا مستعد دائماً لمساعدتك في اختيار العطر المناسب لشخصيتك.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+      <div class="footer-top">
+        <div class="footer-about">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <img src="assets/logo.png" alt="YOUNES PARFUM" style="width: 44px; height: 44px; border-radius: 50%; background: #fff; padding: 2px; border: 1px solid var(--gold-primary);">
+            <h3 class="latin-brand gold-text" style="font-size: 1.3rem;">YOUNES PARFUM</h3>
+          </div>
+          <p>
+            العلامة الرائدة في تصميم وتوزيع العطور الفاخرة والمستوحاة من أبهى النفحات الباريسية والشرقية. شغفنا هو إضفاء هالة من التميز والجاذبية لكل من يضع عطراً من مجموعتنا.
+          </p>
+          <div style="display: flex; gap: 12px; font-size: 1.1rem; color: var(--gold-light);">
+            <a href="#" style="background: rgba(255,255,255,0.05); width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--border-subtle);"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="background: rgba(255,255,255,0.05); width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--border-subtle);"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" style="background: rgba(255,255,255,0.05); width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--border-subtle);"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" style="background: rgba(255,255,255,0.05); width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--border-subtle);"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="#catalogSection">عطور رجالية فاخرة</a></li>
+            <li><a href="#catalogSection">عطور نسائية ساحرة</a></li>
+            <li><a href="#catalogSection">مجموعات دهن العود والبخور</a></li>
+            <li><a href="#catalogSection">عروض وتخفيضات خاصة</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>معلومات التوصيل والطلب</h4>
+          <ul>
+            <li><i class="fas fa-check-circle" style="color: var(--gold-primary); margin-left: 6px;"></i> الدفع عند الاستلام (COD)</li>
+            <li><i class="fas fa-check-circle" style="color: var(--gold-primary); margin-left: 6px;"></i> تغطية لكافة 58 ولاية</li>
+            <li><i class="fas fa-check-circle" style="color: var(--gold-primary); margin-left: 6px;"></i> تغليف هدايا ملكي فاخر</li>
+            <li><i class="fas fa-check-circle" style="color: var(--gold-primary); margin-left: 6px;"></i> إمكانية الطلب عبر الهاتف والواتساب</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FOOTER BOTTOM: CONTAINS THE REQUESTED HIDDEN GRAY CONTROL PANEL TRIGGER -->
+      <div class="footer-bottom">
+        <div>
+          © 2026 YOUNES PARFUM. جميع الحقوق محفوظة لمتجر يونس للعطور.
+        </div>
+
+        <!-- The subtle gray hidden trigger as requested:
+             "ويكون فيه لوحت تحكم مخفية من التحت برمادي بكلمة سر 2999" -->
+        <div>
+          <span id="secretAdminTrigger" class="discreet-admin-entry" onclick="triggerSecretAdminAccess()" title="المنطقة الإدارية المحمية">
+            <i class="fas fa-sliders-h"></i>
+            <span>لوحة التحكم</span>
+          </span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- ==========================================================================
+       2. SECRET PASSCODE MODAL (PIN: 2999)
+       ========================================================================== -->
+  <div id="adminPinModal" class="modal-overlay">
+    <div class="modal-card pin-modal-card">
+      <div class="pin-icon-wrap">
+        <i class="fas fa-user-shield"></i>
+      </div>
+      <h3>منطقة الإدارة المحمية</h3>
+      <p>أدخل الرمز السري للوصول إلى لوحة التحكم الحية لمتجر YOUNES PARFUM</p>
+
+      <input type="password" id="adminPinInput" class="pin-input-field" placeholder="••••" maxlength="8" autocomplete="off" autofocus>
+      <div id="pinErrorMsg" class="pin-error-msg"></div>
+
+      <div style="display: flex; gap: 10px;">
+        <button class="cta-gold-btn" style="flex: 1; justify-content: center;" onclick="verifyAdminPin()">
+          <i class="fas fa-unlock-alt"></i>
+          <span>دخول</span>
+        </button>
+        <button class="admin-btn" style="padding: 12px 18px;" onclick="closePinModal()">
+          إلغاء
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       3. REAL-TIME ADMIN DASHBOARD ("تتحدث بدون غمض")
+       ========================================================================== -->
+  <div id="adminMainView" class="admin-view-wrapper">
+    
+    <!-- Admin Sticky Navigation Bar -->
+    <nav class="admin-nav-bar">
+      <div class="admin-nav-container">
+        
+        <div class="admin-brand-side">
+          <img src="assets/logo.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; background: #fff; padding: 2px; border: 1px solid var(--gold-primary);">
+          <div>
+            <div style="font-weight: 800; font-size: 1.15rem; display: flex; align-items: center; gap: 8px;">
+              <span class="gold-text">لوحة تحكم YOUNES PARFUM</span>
+              <span class="admin-live-pulse">
+                <span class="pulse-dot"></span>
+                <span>تحديث حي وتلقائي</span>
+              </span>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-muted);">
+              إدارة الطلبات والأسعار والمخزون بدون إعادة تحميل الصفحة
+            </div>
+          </div>
+        </div>
+
+        <!-- Clock & Action Buttons -->
+        <div class="admin-actions-side">
+          <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); padding: 6px 14px; border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--gold-light);">
+            <i class="far fa-clock"></i>
+            <span id="adminLiveClock" style="direction: ltr; font-weight: 700;">--:--:--</span>
+          </div>
+
+          <button class="admin-btn" onclick="exitAdminToStore()" title="معاينة المتجر">
+            <i class="fas fa-store"></i>
+            <span>معاينة المتجر</span>
+          </button>
+
+          <button class="admin-btn danger" onclick="lockAdminAndExit()" title="قفل وخروج">
+            <i class="fas fa-lock"></i>
+            <span>قفل اللوحة</span>
+          </button>
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- Admin Tabs Header -->
+    <div class="admin-tabs-row">
+      <button class="admin-tab-btn active" onclick="switchAdminTab('orders', this)">
+        <i class="fas fa-boxes-packing"></i>
+        <span>الطلبات الواردة</span>
+        <span id="adminOrdersBadge" class="badge-pill">0</span>
+      </button>
+
+      <button class="admin-tab-btn" onclick="switchAdminTab('products', this)">
+        <i class="fas fa-wine-bottle"></i>
+        <span>إدارة العطور والمنتجات</span>
+      </button>
+
+      <button class="admin-tab-btn" onclick="switchAdminTab('settings', this)">
+        <i class="fas fa-cog"></i>
+        <span>إعدادات المتجر والنسخ الاحتياطي</span>
+      </button>
+    </div>
+
+    <!-- Admin Content Area -->
+    <div class="admin-main-content">
+      
+      <!-- Real-time Statistics Cards Grid -->
+      <div class="admin-stats-grid">
+        <div class="stat-card">
+          <div class="stat-info">
+            <span class="stat-label">إجمالي المبيعات المؤكدة</span>
+            <div class="stat-value gold" id="statTotalRevenue">0 دج</div>
+          </div>
+          <div class="stat-icon"><i class="fas fa-coins"></i></div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-info">
+            <span class="stat-label">إجمالي الطلبات المستلمة</span>
+            <div class="stat-value" id="statTotalOrders">0</div>
+          </div>
+          <div class="stat-icon"><i class="fas fa-receipt"></i></div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-info">
+            <span class="stat-label">طلبات قيد الانتظار (جديدة)</span>
+            <div class="stat-value" id="statPendingOrders" style="color: #fbbf24;">0</div>
+          </div>
+          <div class="stat-icon" style="color: #fbbf24;"><i class="fas fa-hourglass-half"></i></div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-info">
+            <span class="stat-label">طلبات جاري توصيلها</span>
+            <div class="stat-value" id="statShippingOrders" style="color: #c084fc;">0</div>
+          </div>
+          <div class="stat-icon" style="color: #c084fc;"><i class="fas fa-truck"></i></div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-info">
+            <span class="stat-label">عدد العطور في الكتالوج</span>
+            <div class="stat-value" id="statProductsCount">0</div>
+          </div>
+          <div class="stat-icon"><i class="fas fa-spray-can-sparkles"></i></div>
+        </div>
+      </div>
+
+      <!-- TAB 1: ORDERS MANAGEMENT (LIVE) -->
+      <div id="adminTabPane_orders" class="admin-tab-pane active">
+        <div class="admin-card-box">
+          <div class="admin-card-header">
+            <div class="admin-card-title">
+              <i class="fas fa-list-check" style="color: var(--gold-primary);"></i>
+              <span>جدول طلبات الزبائن (تحديث فوري "بدون غمض")</span>
+            </div>
+
+            <div class="admin-card-tools">
+              <!-- Search in Orders -->
+              <div style="position: relative; width: 220px;">
+                <input type="text" id="adminOrderSearch" class="form-input" style="padding: 7px 32px 7px 12px; font-size: 0.85rem;" placeholder="بحث باسم أو رقم...">
+                <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 0.75rem; color: var(--text-dim);"></i>
+              </div>
+
+              <!-- Filter chips -->
+              <div class="table-filter-chips">
+                <button class="filter-chip active" onclick="filterOrdersByStatus('all', this)">الكل</button>
+                <button class="filter-chip" onclick="filterOrdersByStatus('pending', this)">قيد الانتظار</button>
+                <button class="filter-chip" onclick="filterOrdersByStatus('confirmed', this)">مؤكدة</button>
+                <button class="filter-chip" onclick="filterOrdersByStatus('shipping', this)">جاري الشحن</button>
+                <button class="filter-chip" onclick="filterOrdersByStatus('completed', this)">تم التسليم</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Orders Table -->
+          <div class="table-responsive">
+            <table class="custom-admin-table">
+              <thead>
+                <tr>
+                  <th>رقم الطلب والتاريخ</th>
+                  <th>بيانات الزبون والولاية</th>
+                  <th>رقم الهاتف والتواصل</th>
+                  <th>العطور المطلوبة</th>
+                  <th>المبلغ الإجمالي</th>
+                  <th>حالة الطلب (تغيير فوري)</th>
+                  <th>خيارات</th>
+                </tr>
+              </thead>
+              <tbody id="adminOrdersTableBody">
+                <!-- Rendered dynamically without reload -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: PRODUCTS MANAGEMENT (LIVE CRUD) -->
+      <div id="adminTabPane_products" class="admin-tab-pane">
+        <div class="admin-card-box">
+          <div class="admin-card-header">
+            <div class="admin-card-title">
+              <i class="fas fa-spray-can-sparkles" style="color: var(--gold-primary);"></i>
+              <span>قائمة العطور والروائح المتوفرة</span>
+            </div>
+
+            <button class="cta-gold-btn" style="padding: 9px 20px; font-size: 0.88rem;" onclick="openAddProductModal()">
+              <i class="fas fa-plus"></i>
+              <span>إضافة عطر جديد</span>
+            </button>
+          </div>
+
+          <div class="table-responsive">
+            <table class="custom-admin-table">
+              <thead>
+                <tr>
+                  <th>الصورة</th>
+                  <th>اسم العطر والتركيز</th>
+                  <th>القسم</th>
+                  <th>السعر والتخفيض</th>
+                  <th>المخزون</th>
+                  <th>التحكم</th>
+                </tr>
+              </thead>
+              <tbody id="adminProductsTableBody">
+                <!-- Rendered dynamically without reload -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: SETTINGS & BACKUP -->
+      <div id="adminTabPane_settings" class="admin-tab-pane">
+        <div class="admin-card-box" style="padding: 30px;">
+          <h3 style="font-size: 1.3rem; margin-bottom: 20px; color: var(--gold-light);">
+            <i class="fas fa-sliders" style="margin-left: 8px;"></i>
+            إعدادات متجر YOUNES PARFUM
+          </h3>
+
+          <form onsubmit="handleSaveSettings(event)" style="max-width: 600px;">
+            <div class="order-form-group">
+              <label>رقم هاتف الاتصال بالمتجر:</label>
+              <input type="text" id="settingsStorePhone" class="form-input" required>
+            </div>
+
+            <div class="order-form-group">
+              <label>رقم الواتساب لاستقبال تأكيدات الطلبات (بالمفتاح الدولي بدون +):</label>
+              <input type="text" id="settingsStoreWhatsapp" class="form-input" placeholder="213550000000" required>
+            </div>
+
+            <div class="order-form-group">
+              <label>الرمز السري للوحة التحكم (الافتراضي 2999):</label>
+              <input type="text" id="settingsAdminPin" class="form-input" maxlength="12" required>
+            </div>
+
+            <div class="order-form-group" style="display: flex; align-items: center; gap: 10px; margin-top: 15px;">
+              <input type="checkbox" id="settingsSoundCheck" style="width: 20px; height: 20px; accent-color: var(--gold-primary);" checked>
+              <label for="settingsSoundCheck" style="margin: 0; cursor: pointer;">تفعيل التنبيه الصوتي الحصري عند استقبال طلب جديد 🔔</label>
+            </div>
+
+            <button type="submit" class="cta-gold-btn" style="margin-top: 20px;">
+              <i class="fas fa-save"></i>
+              <span>حفظ الإعدادات</span>
+            </button>
+          </form>
+
+          <hr style="border: none; border-top: 1px solid var(--border-subtle); margin: 40px 0;">
+
+          <!-- Backup & Restore Data -->
+          <h4 style="font-size: 1.1rem; margin-bottom: 15px;">النسخ الاحتياطي واستعادة البيانات 💾</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
+            يمكنك حفظ نسخة كاملة من جميع العطور والطلبات والإعدادات إلى ملف على جهازك واستعادتها في أي وقت دون فقدان أي بيانات.
+          </p>
+
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <button class="admin-btn gold" onclick="exportDataBackup()">
+              <i class="fas fa-download"></i>
+              <span>تصدير نسخة احتياطية (JSON)</span>
+            </button>
+
+            <label class="admin-btn" style="cursor: pointer;">
+              <i class="fas fa-upload"></i>
+              <span>استعادة من ملف احتياطي</span>
+              <input type="file" accept=".json" onchange="importDataBackup(event)" style="display: none;">
+            </label>
+
+            <button class="admin-btn danger" onclick="resetToDefaultCatalog()">
+              <i class="fas fa-rotate-left"></i>
+              <span>استعادة الكتالوج الافتراضي</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       4. QUICK ORDER MODAL (ALGERIAN 58 WILAYAS CHECKOUT)
+       ========================================================================== -->
+  <div id="quickOrderModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-box">
+          <i class="fas fa-bag-shopping"></i>
+          <h3>إكمال طلب الشراء</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closeQuickOrderModal()">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Selected Product Summary -->
+        <div class="order-product-summary">
+          <img id="modalOrderProdImg" src="" class="order-product-thumb" alt="العطر المختار">
+          <div style="flex: 1;">
+            <h4 id="modalOrderProdName" style="font-size: 1rem; font-weight: 800; margin-bottom: 4px;">--</h4>
+            <div id="modalOrderProdVolume" style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 4px;">--</div>
+            <div id="modalOrderProdPrice" style="color: var(--gold-light); font-weight: 800; font-size: 1.1rem;">-- دج</div>
+          </div>
+        </div>
+
+        <!-- Checkout Form -->
+        <form id="quickOrderForm" onsubmit="handleOrderFormSubmit(event)">
+          <div class="order-form-group">
+            <label>الاسم واللقب بالكامل: <span>*</span></label>
+            <input type="text" id="custFullName" class="form-input" placeholder="مثال: يونس بن مسعود" required>
+          </div>
+
+          <div class="order-form-group">
+            <label>رقم الهاتف (لتأكيد التوصيل): <span>*</span></label>
+            <input type="tel" id="custPhoneNum" class="form-input" placeholder="05 / 06 / 07 ..." required>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 12px;">
+            <div class="order-form-group">
+              <label>ولاية التوصيل (58 ولاية): <span>*</span></label>
+              <select id="orderWilayaSelect" class="form-select" required>
+                <!-- Populated dynamically with 58 wilayas -->
+              </select>
+            </div>
+
+            <div class="order-form-group">
+              <label>الكمية: <span>*</span></label>
+              <input type="number" id="orderQtyInput" class="form-input" min="1" max="20" value="1" required>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="order-form-group">
+              <label>البلدية / الدائرة: <span>*</span></label>
+              <input type="text" id="custBaladiya" class="form-input" placeholder="مثال: باب الزوار" required>
+            </div>
+
+            <div class="order-form-group">
+              <label>العنوان الدقيق:</label>
+              <input type="text" id="custAddress" class="form-input" placeholder="الحي، رقم العمارة...">
+            </div>
+          </div>
+
+          <div class="order-form-group">
+            <label>ملاحظات إضافية للتوصيل (اختياري):</label>
+            <input type="text" id="custOrderNotes" class="form-input" placeholder="مثال: يرجى التوصيل بعد الساعة الثانية مساءً">
+          </div>
+
+          <!-- Pricing breakdown with live shipping -->
+          <div class="order-pricing-breakdown">
+            <div class="price-row">
+              <span>سعر العطور:</span>
+              <span id="orderSubtotalVal">0 دج</span>
+            </div>
+            <div class="price-row">
+              <span>سعر التوصيل:</span>
+              <span id="orderShippingVal">0 دج</span>
+            </div>
+            <div class="price-row total">
+              <span>المجموع الإجمالي عند الاستلام:</span>
+              <span id="orderGrandTotalVal">0 دج</span>
+            </div>
+          </div>
+
+          <button type="submit" class="cta-gold-btn" style="width: 100%; justify-content: center; padding: 14px;">
+            <i class="fas fa-check-double"></i>
+            <span>تأكيد الطلب الآن (الدفع عند الاستلام)</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       5. ORDER SUCCESS CONFIRMATION MODAL
+       ========================================================================== -->
+  <div id="orderSuccessModal" class="modal-overlay">
+    <div class="modal-card pin-modal-card" style="max-width: 480px;">
+      <div style="width: 72px; height: 72px; border-radius: 50%; background: rgba(16, 185, 129, 0.15); border: 2px solid var(--color-success); color: var(--color-success); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 16px;">
+        <i class="fas fa-check"></i>
+      </div>
+      <h3 style="font-size: 1.4rem; color: #fff;">تم تسجيل طلبك بنجاح! 🎉</h3>
+      <p style="color: var(--text-muted); margin-bottom: 20px;">
+        شكراً لثقتكم بمتجر <strong style="color: var(--gold-light);">YOUNES PARFUM</strong>. سيقوم فريقنا بالاتصال بكم هاتفياً لتأكيد انطلاق شحنتكم.
+      </p>
+
+      <div style="background: #0f1014; border: 1px dashed var(--border-gold); padding: 16px; border-radius: var(--radius-sm); text-align: right; margin-bottom: 24px; font-size: 0.9rem;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+          <span style="color: var(--text-muted);">رقم الطلب:</span>
+          <strong id="successOrderNumber" style="color: var(--gold-light);">--</strong>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+          <span style="color: var(--text-muted);">اسم الزبون:</span>
+          <span id="successCustomerName">--</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+          <span style="color: var(--text-muted);">الهاتف:</span>
+          <span id="successPhone" style="direction: ltr;">--</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+          <span style="color: var(--text-muted);">الولاية:</span>
+          <span id="successWilaya">--</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border-subtle); padding-top: 8px; margin-top: 6px;">
+          <span style="font-weight: 800;">المبلغ المستحق للدفع:</span>
+          <strong id="successTotal" style="color: var(--gold-light); font-size: 1.1rem;">-- دج</strong>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <a id="successWhatsAppBtn" href="#" target="_blank" class="cta-gold-btn" style="justify-content: center; background: #25d366; color: #fff;">
+          <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i>
+          <span>متابعة الطلب عبر واتساب فوراً</span>
+        </a>
+        <button class="admin-btn" style="justify-content: center; padding: 12px;" onclick="closeOrderSuccessModal()">
+          العودة للتسوق
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       6. PRODUCT DETAILS & SCENT NOTES MODAL
+       ========================================================================== -->
+  <div id="productDetailsModal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 600px;">
+      <div class="modal-header">
+        <div class="modal-title-box">
+          <i class="fas fa-feather-alt"></i>
+          <h3>الهرم العطري والتفاصيل</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closeProductDetailsModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 18px; flex-wrap: wrap;">
+          <img id="detailProdImg" src="" style="width: 120px; height: 120px; border-radius: var(--radius-md); object-fit: cover; border: 1px solid var(--border-gold);" alt="">
+          <div style="flex: 1;">
+            <div style="display: flex; gap: 8px; margin-bottom: 6px;">
+              <span id="detailProdCategory" style="background: rgba(197, 160, 89, 0.15); color: var(--gold-light); padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">--</span>
+              <span id="detailProdConcentration" style="color: var(--gold-primary); font-size: 0.8rem; font-weight: 700;">--</span>
+            </div>
+            <h3 id="detailProdTitle" style="font-size: 1.25rem; font-weight: 800; margin-bottom: 6px;">--</h3>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;">
+              الحجم: <strong id="detailProdVolume" style="color: #fff;">--</strong>
+            </div>
+            <div id="detailProdPrice" style="color: var(--gold-light); font-size: 1.35rem; font-weight: 900;">-- دج</div>
+          </div>
+        </div>
+
+        <p id="detailProdDesc" style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.7; margin-bottom: 15px;"></p>
+
+        <h4 style="font-size: 0.95rem; font-weight: 800; color: var(--gold-light); margin-bottom: 8px;">
+          <i class="fas fa-layer-group" style="margin-left: 6px;"></i> الهرم العطري:
+        </h4>
+        <div id="detailProdNotes"></div>
+
+        <div style="margin-top: 24px;">
+          <button id="detailOrderBtn" class="cta-gold-btn" style="width: 100%; justify-content: center; padding: 13px;">
+            <i class="fas fa-shopping-bag"></i>
+            <span>طلب هذا العطر الفاخر الآن</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       7. ADD / EDIT PERFUME MODAL (ADMIN)
+       ========================================================================== -->
+  <div id="productFormModal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 620px;">
+      <div class="modal-header">
+        <div class="modal-title-box">
+          <i class="fas fa-spray-can-sparkles"></i>
+          <h3 id="productFormModalTitle">إضافة عطر جديد</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closeProductFormModal()">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <form id="adminProductForm" onsubmit="handleSaveProductSubmit(event)">
+          <input type="hidden" id="editProductId">
+
+          <div class="order-form-group">
+            <label>اسم العطر والماركة: <span>*</span></label>
+            <input type="text" id="prodFormName" class="form-input" placeholder="مثال: ديور سوفاج إلكسير - Sauvage Elixir" required>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="order-form-group">
+              <label>القسم / التصنيف: <span>*</span></label>
+              <select id="prodFormCategory" class="form-select" required>
+                <option value="men">عطور رجالية</option>
+                <option value="women">عطور نسائية</option>
+                <option value="oriental">عطور النيش والشرقية</option>
+                <option value="sets">مجموعات وهدايا</option>
+              </select>
+            </div>
+
+            <div class="order-form-group">
+              <label>حجم العبوة: <span>*</span></label>
+              <input type="text" id="prodFormVolume" class="form-input" placeholder="مثال: 100 مل" required>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="order-form-group">
+              <label>سعر البيع (دج): <span>*</span></label>
+              <input type="number" id="prodFormPrice" class="form-input" placeholder="مثال: 18500" required>
+            </div>
+
+            <div class="order-form-group">
+              <label>السعر القديم قبل الخصم (اختياري):</label>
+              <input type="number" id="prodFormOldPrice" class="form-input" placeholder="مثال: 22000">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="order-form-group">
+              <label>درجة التركيز:</label>
+              <input type="text" id="prodFormConcentration" class="form-input" placeholder="مثال: Extrait de Parfum">
+            </div>
+
+            <div class="order-form-group">
+              <label>شارة ترويجية (Badge):</label>
+              <input type="text" id="prodFormBadge" class="form-input" placeholder="مثال: الأكثر مبيعاً 🔥 أو حصري ✨">
+            </div>
+          </div>
+
+          <div class="order-form-group">
+            <label>رابط صورة العطر (URL):</label>
+            <input type="url" id="prodFormImg" class="form-input" placeholder="https://images.unsplash.com/...">
+          </div>
+
+          <!-- Notes -->
+          <div style="background: #0f1014; padding: 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); margin-bottom: 16px;">
+            <h5 style="color: var(--gold-light); margin-bottom: 8px;">الهرم العطري (النوتات):</h5>
+            <div class="order-form-group" style="margin-bottom: 8px;">
+              <input type="text" id="prodFormNotesTop" class="form-input" placeholder="افتتاحية العطر (مثال: البرغموت، الهيل، القرفة)">
+            </div>
+            <div class="order-form-group" style="margin-bottom: 8px;">
+              <input type="text" id="prodFormNotesHeart" class="form-input" placeholder="قلب العطر (مثال: اللافندر الفرنسي، الياسمين)">
+            </div>
+            <div class="order-form-group" style="margin-bottom: 0;">
+              <input type="text" id="prodFormNotesBase" class="form-input" placeholder="قاعدة العطر (مثال: العود، خشب الصندل، العنبر)">
+            </div>
+          </div>
+
+          <div class="order-form-group">
+            <label>وصف العطر وسحره:</label>
+            <textarea id="prodFormDesc" class="form-textarea" rows="3" placeholder="اكتب نبذة شيقة عن سحر العطر ومناسباته..."></textarea>
+          </div>
+
+          <button type="submit" class="cta-gold-btn" style="width: 100%; justify-content: center; padding: 13px;">
+            <i class="fas fa-check"></i>
+            <span>حفظ العطر فورياً</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       8. CART DRAWER OVERLAY
+       ========================================================================== -->
+  <div id="cartDrawerOverlay" class="cart-drawer-overlay" onclick="closeCartDrawer()">
+    <div class="cart-drawer" onclick="event.stopPropagation()">
+      <div class="cart-drawer-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <i class="fas fa-shopping-bag" style="color: var(--gold-primary); font-size: 1.2rem;"></i>
+          <h3 style="font-size: 1.15rem; font-weight: 800;">سلة التسوق</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closeCartDrawer()">&times;</button>
+      </div>
+
+      <div id="cartItemsList" class="cart-items-list">
+        <!-- Rendered reactively via js/app.js -->
+      </div>
+
+      <div class="cart-drawer-footer">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+          <span style="font-weight: 700;">المجموع الفرعي:</span>
+          <span id="cartTotalValue" style="color: var(--gold-light); font-weight: 900; font-size: 1.3rem;">0 دج</span>
+        </div>
+        <button class="cta-gold-btn" style="width: 100%; justify-content: center; padding: 13px;" onclick="proceedCartCheckout()">
+          <span>إتمام الطلب لجميع المنتجات</span>
+          <i class="fas fa-arrow-left"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Application Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
